@@ -34,6 +34,14 @@ void dequeue() {
     }
 }
 
+void peek() {
+    if (front == -1 && rear == -1) {
+        printf("Queue is empty.\n");
+    } else {
+        printf("Front element: %d\n", queue[front]);
+    }
+}
+
 void display() {
     if (front == -1 && rear == -1) {
         printf("Queue is empty.\n");
@@ -57,7 +65,7 @@ int main() {
 
     int choice, element;
     while (1) {
-        printf("\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n");
+        printf("\n1. Enqueue\n2. Dequeue\n3. Peek\n4. Display\n5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -71,9 +79,12 @@ int main() {
                 dequeue();
                 break;
             case 3:
-                display();
+                peek();
                 break;
             case 4:
+                display();
+                break;
+            case 5:
                 printf("Exiting...\n");
                 return 0;
             default:
